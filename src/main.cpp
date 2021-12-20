@@ -65,8 +65,8 @@ string parseJson(string jsonFile, string contractName) {
 string Message::ANSI_RESET = "\u001B[0m";
 string Message::ANSI_YELLOW = "\u001B[33m";
 bool Message::printDebug = false;
-static string DEFAULT_CONTRACTS_FOLDER = "/home/yemx6/CFGBuilder/contracts/";
-static string DEFAULT_OUTPUTS = "/home/yemx6/CFGBuilder/outputs/";
+static string DEFAULT_CONTRACTS_FOLDER = "/Users/shall/CFG/cfgbuilder_local/CFGBuilder/contracts";
+static string DEFAULT_OUTPUTS = "/Users/shall/CFG/cfgbuilder_local/CFGBuilder/contracts";
 
 int main(int argc, char* argv[]){
     string contractsFolder = DEFAULT_CONTRACTS_FOLDER;
@@ -99,7 +99,7 @@ int main(int argc, char* argv[]){
             string filePath = file.path().string();
             cfgCon << "solc";
             cfgCon << " --combined-json abi,bin,bin-runtime,srcmap,srcmap-runtime,ast " + filePath;
-            cfgCon << " > " + filePath + ".json";
+            cfgCon << " > ../contracts/json/" + file.path().filename().string() + ".json";
             cfgCon << endl;
         });
         /* Generate CFG construction scripts */
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]){
             string fileName = file.path().filename().string();
             string thisContractName = fileName.substr(41, fileName.length() - 45);
             cfgCon << "./main";
-            cfgCon << " --file " + filePath + ".json";
+            cfgCon << " --file ../contracts/json/" + fileName + ".json";
             cfgCon << " --name " + thisContractName;
             cfgCon << endl;
         });
@@ -118,17 +118,17 @@ int main(int argc, char* argv[]){
     if(vm.count("file") && vm.count("name")){
         string bytecode = parseJson(jsonFile, contractName);
         Contract contract(contractName, bytecode);
-        my_json output;
+        my_json output_json;
         try {
-            output = JsonExporter::contractJsonWriter(contract);
+            output_json = JsonExporter::contractJsonWriter(contract);
             std::fstream _file;
-            _file.open("../../outputs/json/" + contractName + ".json", ios::in);
+            _file.open("../outputs/json/" + contractName + ".json", ios::in);
             if(!_file) {
                 Message::printDebugFun("Output file will be created");
                 try {
                     std::ofstream ofs;
-                    ofs.open("../../outputs/json/" + contractName + ".json", ios::out);
-                    ofs << output.dump(4) << endl;
+                    ofs.open("../outputs/json/" + contractName + ".json", ios::out);
+                    ofs << output_json.dump(4) << endl;
                     ofs.close();
                     cout << "Contract analysis exported in " << contractName + ".json" << endl;
                 } catch (exception e) {

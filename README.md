@@ -1,4 +1,4 @@
-## Building from source (Linux)
+## Building from source (Linux & MacOs)
 
 ### Get the source code
 
@@ -11,7 +11,7 @@ cd CFGBuilder/src
 
 ### Install CMake
 
-CMake is used to control the build configuration of the project. 
+CMake is used to control the build configuration of the project.
 We strongly recommend you to install CMake by downloading and unpacking the binary
 distribution  of the latest version available on the
 [**CMake download page**](https://cmake.org/download/).
@@ -19,7 +19,13 @@ distribution  of the latest version available on the
 The CMake package available in your operating system can also be installed
 and used if it meets the minimum version requirement.
 
-### Install dependencies (Linux)
+### Install dependencies
+
+#### Linux
+
+To be continued
+
+#### MacOs
 
 To be continued
 
@@ -40,4 +46,4 @@ Place contracts to `contracts/`
 ```shell
 ./main -g && chmod +x cfgCon && ./cfgCon
 ```
-The CFG will be stored in `outpus/` in the form of json
+The CFG will be stored in `outpus/json` in the form of json

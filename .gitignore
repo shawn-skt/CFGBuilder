@@ -1,0 +1,6 @@
+.vscode
+build
+./src/deps
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
