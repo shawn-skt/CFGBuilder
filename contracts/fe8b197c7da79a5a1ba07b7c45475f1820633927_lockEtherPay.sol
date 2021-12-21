@@ -71,13 +71,13 @@ contract lockEtherPay is Ownable {
   bool public isReleased = false;
   uint256 public start_time;
   uint256 public end_time;
-  uint256 public fifty_two_weeks = 29808000;
+  uint256 public fifty_two_weeks = 27129600;
 
   event TokenReleased(address beneficiary, uint256 token_amount);
 
   constructor() public{
     token_reward = token(0xAa1ae5e57dc05981D83eC7FcA0b3c7ee2565B7D6);
-    beneficiary = 0x4558e8FEe49502F75C4d0e58F65f0b7aC604Ed4A;
+    beneficiary = 0x1dD2fA319077B4179978c79a6484E0278D220A4c;
   }
 
   function tokenBalance() constant public returns (uint256){

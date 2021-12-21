@@ -29,6 +29,43 @@ To be continued
 
 To be continued
 
+### Data Clean
+
+First you may need to preprocess your data/contracts.
+
+We provide two bash files (`data_preprocess.sh` and `fix_err.sh`) to help you standardize your contract files.
+
+```shell
+./data_preprocess.sh contracts && ./fix_err.sh contracts
+```
+
+Specifically, you can run these bash files to filter those contracts in wrong format (can not be parsed by `solc`) or having unreachable imports like that.
+
+```solidity
+import "./interfaces/IVeXBE.sol";
+import "./interfaces/IERC20.sol";
+```
+
+Notes: the bash parameter is your contract directory. The directory structure is like that.
+
+```tree
+.
+├── xxxxxxx.sol
+├── xxxxxxx.sol
+├── ......
+└── json
+    ├── error
+    │   └── xxxxxxx.json
+    ├── fail2fix
+    │   └── xxxxxxx.json
+    ├── fix
+    │   ├── xxxxxxxxxx.sol.json
+    │   └── .......
+    ├── xxxxxxxx.sol.json
+    ├── ......
+    └──
+```
+
 ### Build
 
 Configure the project build with the following command to create the
