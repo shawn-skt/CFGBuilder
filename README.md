@@ -50,20 +50,30 @@ Notes: the bash parameter is your contract directory. The directory structure is
 
 ```tree
 .
-├── xxxxxxx.sol
-├── xxxxxxx.sol
-├── ......
+├── 0aa91eb8d92a84cc9c8902f63a185d6ae5e87cff_HappyToken.sol
+├── error
+│   ├── 0b1fA4b11Edbcb6d35731549211D83C857fFBC0a_VotingStakingRewards.sol
+│   └── 7fE1021378dd1e6F25042aA5f378c9da13de9680_CRC.sol
+├── fe6e165757786bf49d121989f2fb6f3fa325bcef_VictoryGlobalCoin.sol
+├── fe7f8a61d8b89f74c95ecb653c63fa245b08fc17_BancorKiller.sol
+├── fe8b197c7da79a5a1ba07b7c45475f1820633927_lockEtherPay.sol
+├── fe8b40a35ff222c8475385f74e77d33954531b41_XToken.sol
+├── fe8c1c3e41960517b8c9fa83d9cf867b6275717f_IRECToken.sol
+├── fe8eb5c34726bce6ef3fab63369f0772444a9a99_RNTDTokenCoin.sol
 └── json
     ├── error
-    │   └── xxxxxxx.json
-    ├── fail2fix
-    │   └── xxxxxxx.json
-    ├── fix
-    │   ├── xxxxxxxxxx.sol.json
-    │   └── .......
-    ├── xxxxxxxx.sol.json
-    ├── ......
-    └──
+    │   ├── 0b1fA4b11Edbcb6d35731549211D83C857fFBC0a_VotingStakingRewards.sol.json
+    │   └── 7fE1021378dd1e6F25042aA5f378c9da13de9680_CRC.sol.json
+    ├── fe6e165757786bf49d121989f2fb6f3fa325bcef_VictoryGlobalCoin.sol.json
+    ├── fe7f8a61d8b89f74c95ecb653c63fa245b08fc17_BancorKiller.sol.json
+    ├── fe8b197c7da79a5a1ba07b7c45475f1820633927_lockEtherPay.sol.json
+    ├── fe8b40a35ff222c8475385f74e77d33954531b41_XToken.sol.json
+    ├── fe8c1c3e41960517b8c9fa83d9cf867b6275717f_IRECToken.sol.json
+    ├── fe8eb5c34726bce6ef3fab63369f0772444a9a99_RNTDTokenCoin.sol.json
+    └── fixed
+        ├── 0aa91eb8d92a84cc9c8902f63a185d6ae5e87cff_HappyToken.sol.json
+        ├── 0b1fA4b11Edbcb6d35731549211D83C857fFBC0a_VotingStakingRewards.sol.json
+        └── 7fE1021378dd1e6F25042aA5f378c9da13de9680_CRC.sol.json
 ```
 
 ### Build
