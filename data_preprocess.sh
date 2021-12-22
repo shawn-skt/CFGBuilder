@@ -13,7 +13,7 @@ function preprocess(){
             solc --combined-json abi,bin,bin-runtime,srcmap,srcmap-runtime,ast $file_name > $1/json/$file.json
             if [ $? -ne 0 ]; then
                 echo "parsing ${file_name} error"
-                mv $1/json/$file.json $1/json/error
+                mv $1/json/$file.json $1/json/error/$file.json
             else
                 echo "parsing ${file_name} successfully to ${1}/json/${file}.json"
             fi

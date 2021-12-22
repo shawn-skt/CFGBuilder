@@ -15,6 +15,7 @@ function fix_err(){
             if [ $? -ne 0 ]; then
                 echo "parsing ${filename} error"
                 mv $1/$filename $1/error/$filename
+                rm -rf $1/json/fixed/$filename.json
             else
                 echo "parsing ${filename} successfully"
                 rm -rf $1/json/error/${file}
